@@ -1,18 +1,15 @@
-import "@hotwired/turbo-rails";
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import { Route, Routes } from 'react-router-dom';
-// import Message from "./message";
-
-function App() {
-    return (<h1>Hello World!</h1>);
-}
+import { Provider } from 'react-redux';
+import { BrowserRouter } from "react-router-dom";
+import App from './app';
+import store from './store';
 
 ReactDOM.render(
-    // <Routes>
-    //     <Route exact path="/" component={App} />
-    //     <Route exact path="/greeting" component={Message} />
-    // </Routes>,
-    <App />,
+    <Provider store={store}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </Provider>,
     document.getElementById('root'),
 );
