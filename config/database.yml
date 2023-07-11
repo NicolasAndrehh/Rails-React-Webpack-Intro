@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: Rails_React_Webpack_development
+  user: postgres
+  password: password
+
+test:
+  <<: *default
+  database: Rails_React_Webpack_test
+  user: postgres
+  password: password
+
+production:
+  <<: *default
+  database: Rails_React_Webpack_production
+  username: Rails_React_Webpack
+  password: <%= ENV["RAILS_REACT_WEBPACK_DATABASE_PASSWORD"] %>
