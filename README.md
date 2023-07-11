@@ -96,6 +96,8 @@ Install this project with:
   bundle install
   rails db:create
   rails db:migrate
+  rails db:seed
+  rails assets:precompile
 ```
 
 ### Usage
